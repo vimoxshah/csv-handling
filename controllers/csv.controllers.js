@@ -9,7 +9,7 @@ const upload = async (req, res) => {
       return res.status(400).send("Please upload a CSV file!");
     }
 
-    let path = __basedir + "/static/assets/uploads/" + req.file.filename;
+    const path = __basedir + "/static/assets/uploads/" + req.file.filename;
 
     fs.createReadStream(path)
       .pipe(csv.parse({ headers: true }))

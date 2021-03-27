@@ -6,7 +6,7 @@ const router = new Router();
 const csvController = require("../controllers/csv.controllers");
 const upload = multer({ dest: "../static/assets/uploads/" });
 
-let routes = (app) => {
+const routes = (app) => {
   router.post("/upload", upload.single("file"), csvController.upload);
 
   app.use("/api/csv", router);
